@@ -29,7 +29,7 @@ export const CardVehicles = props => {
 				<h5 className="card-title">{props.name}</h5>
 				<p className="card-text">{cardDetails.description ? cardDetails.description : "description"}</p>
 				<p className="card-text">{cardDetails.properties ? cardDetails.properties.name : "name"}</p>
-				<a href="/single/" className="btn btn-primary">
+				<a href={"/vehicles/" + cardDetails.uid} className="btn btn-primary">
 					Learn More!
 				</a>
 				<button

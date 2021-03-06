@@ -23,7 +23,13 @@ const Layout = () => {
 							<Home />
 						</Route>
 						<Route exact path="/single/:uid">
-							<Single />
+							<Single path="single" />
+						</Route>
+						<Route exact path="/planets/:uid">
+							<Single path="planets" />
+						</Route>
+						<Route exact path="/vehicles/:uid">
+							<Single path="vehicles" />
 						</Route>
 					</Switch>
 					<Footer />

@@ -4,14 +4,14 @@ import PropTypes from "prop-types";
 import "../../styles/cardSingle.scss";
 import { Context } from "../store/appContext";
 
-export const CardSinglePlanets = props => {
+export const CardSingleVehicles = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	console.log(params);
 
 	const [cardDetails, setCardDetails] = useState({});
 	useEffect(() => {
-		fetch("https://www.swapi.tech/api/planets/" + params.uid)
+		fetch("https://www.swapi.tech/api/Vehicles/" + params.uid)
 			.then(res => res.json())
 			.then(data => {
 				setCardDetails(data.result);
@@ -21,24 +21,28 @@ export const CardSinglePlanets = props => {
 	}, []);
 
 	return (
-		<div className="card cardSingle d-flex flex-row ">
+		<div className="card cardSingle d-flex flex-row  ">
 			<img
-				src="https://images.pexels.com/photos/2694037/pexels-photo-2694037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+				src="https://images.pexels.com/photos/6499004/pexels-photo-6499004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 				className="card-img-top imgsingle"
 				alt="..."
 			/>
 			<div className="card-body">
 				<h5 className="card-title">{cardDetails.properties ? cardDetails.properties.name : "name"}</h5>
-				<p className="card-text">{cardDetails.properties ? cardDetails.properties.diameter : "diameter"}</p>
-				<p className="card-text">{cardDetails.properties ? cardDetails.properties.climate : "climate"}</p>
-				<p className="card-text">{cardDetails.properties ? cardDetails.properties.terrain : "terrain"}</p>
-				<p className="card-text">{cardDetails.properties ? cardDetails.properties.gravity : "gravity"}</p>
-				<p className="card-text">{cardDetails.properties ? cardDetails.properties.population : "population"}</p>
+				<p className="card-text">{cardDetails.properties ? cardDetails.properties.crew : "crew"}</p>
+				<p className="card-text">
+					{cardDetails.properties ? cardDetails.properties.consumables : "consumables"}
+				</p>
+				<p className="card-text">{cardDetails.properties ? cardDetails.properties.model : "model"}</p>
+				<p className="card-text">{cardDetails.properties ? cardDetails.properties.pilots : "pilots"}</p>
+				<p className="card-text">
+					{cardDetails.properties ? cardDetails.properties.vehicle_class : "vehicle-class"}
+				</p>
 			</div>
 		</div>
 	);
 };
-CardSinglePlanets.propTypes = {
+CardSingleVehicles.propTypes = {
 	name: PropTypes.string,
 	uid: PropTypes.string,
 	url: PropTypes.string
