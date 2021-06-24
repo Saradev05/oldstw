@@ -21,11 +21,11 @@ export const CardPlanets = props => {
 	return (
 		<div className="card">
 			<img
-				className="card-img-cap"
+				className="card-img-top"
 				src="https://images.pexels.com/photos/2694037/pexels-photo-2694037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 				alt="Card image cap"
 			/>
-			<div className="card-body">
+			<div className="card-body ">
 				<h5 className="card-title">{props.name}</h5>
 				<p className="card-text">{cardDetails.description ? cardDetails.description : "description"}</p>
 				<p className="card-text">{cardDetails.properties ? cardDetails.properties.name : "name"}</p>

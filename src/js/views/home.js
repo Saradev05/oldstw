@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import { CardPlanets } from "../component/cardPlanets.js";
 import { CardVehicles } from "../component/cardVehicles.js";
 import { CardPeople } from "../component/cardPeople.js";
-// Aleida Sara StarWars Flux Fetch Api
+// Sara StarWars Flux Fetch Api
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -28,24 +28,21 @@ export const Home = () => {
 	});
 
 	return (
-		<div>
-			<div className="text-center mt-5">
+		<div className="fondo container-fluid ">
+			<div className="text-center row mt-5">
 				<h1>Planets</h1>
-				<div className="all-planets"> {allPlanets} </div>
+				<div className="all-planets  "> {allPlanets} </div>
 			</div>
 
 			<div className="text-center mt-5">
 				<h1>People</h1>
-				<div className="all-people"> {allPeople} </div>
+				<div className="all-people "> {allPeople} </div>
 			</div>
 
 			<div className="text-center mt-5">
 				<h1>Vehicles</h1>
-				<div className="all-vehicles"> {allVehicles} </div>
+				<div className="all-vehicles "> {allVehicles} </div>
 			</div>
 		</div>
 	);
 };
-// {
-// 	/* <div className="d-flex"> {allPeplepeoples} </div> */
-// }

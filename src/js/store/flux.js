@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setFavorites: name => {
 				let favorites = getStore().favorites;
-				favorites.push(name);
+				favorites.unshift(name);
 				setStore({ favorites: favorites });
 				console.log(getStore().favorites);
 			},
