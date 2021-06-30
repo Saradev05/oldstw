@@ -35,7 +35,13 @@ export const CardVehicles = props => {
 				<button
 					type="button"
 					className="btn btn-outline-warning ml-4"
-					onClick={() => actions.setFavorites(props.name)}
+					onClick={() => {
+						if (store.favorites.includes(props.name)) {
+							actions.deleteFavorites(store.favorites.indexOf(props.name));
+						} else {
+							actions.setFavorites(props.name);
+						}
+					}}
 					data-toggle="button">
 					<i className="far fa-heart" />
 				</button>
